@@ -11,21 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('docente_grupo', function (Blueprint $table) {
+        Schema::create('estudiante', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('docente_id')->unsigned();
-            $table->integer('grupo_id')->unsigned();
-            $table->foreign('docente_id')->references('id')->on('docente');
-            $table->foreign('grupo_id')->references('id')->on('grupo');
+            $table->string('nombre')->nullable(false);
+            $table->string('apellido')->nullable(false);
+            $table->string('email')->unique()->nullable(false);
+            $table->string('pin')->nullable(false);
         });
     }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('docente_grupo');
+        Schema::dropIfExists('estudiante');
     }
 };

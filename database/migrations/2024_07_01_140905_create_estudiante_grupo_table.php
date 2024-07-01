@@ -11,21 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('docente_grupo', function (Blueprint $table) {
+        Schema::create('estudiante_grupo', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('docente_id')->unsigned();
+            $table->integer('estudiante_id')->unsigned();
             $table->integer('grupo_id')->unsigned();
-            $table->foreign('docente_id')->references('id')->on('docente');
+            $table->foreign('estudiante_id')->references('id')->on('estudiante');
             $table->foreign('grupo_id')->references('id')->on('grupo');
         });
     }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('docente_grupo');
+        Schema::dropIfExists('estudiante_grupo');
     }
 };

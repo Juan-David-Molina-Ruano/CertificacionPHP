@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GrupoController;
 
-Route::group(['prefix' => 'grupos'], function(){
+Route::group(['prefix' => 'grupos', 'middleware' => 'auth_docentes'], function(){
     Route::get('/', [GrupoController::class, 'index'])->name('grupos.index');
     Route::get('/show/{id}', [GrupoController::class, 'show'])->name('grupos.show');
     Route::get('/create', [GrupoController::class, 'create'])->name('grupos.create');
