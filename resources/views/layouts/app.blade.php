@@ -70,6 +70,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 Estudiantes
                             </a>
+                            <a class="nav-link" href="{{route('asistencias.index')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Asistencias
+                            </a>
                         @endif
                     </div>
                 </div>

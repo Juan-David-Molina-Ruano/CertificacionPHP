@@ -11,4 +11,5 @@ require __DIR__.'/docente_routes.php';
 require __DIR__.'/docente_grupos_routes.php';
 require __DIR__.'/estudante_grupos_routes.php';
 require __DIR__.'/estudiante-routes.php';
+require __DIR__.'/asistencias_routes.php';
 
